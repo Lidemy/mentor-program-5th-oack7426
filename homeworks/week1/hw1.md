@@ -9,12 +9,16 @@
 git clone {專案網址}
 ```
 3.從 master 建立一個 branch 開始寫作業
+```
+git checkout -b {分支名}
+```
+4.做完後 commit
+```
+git commit -m '{commit 內容}'
+``` 
+5.寫完 push 分支到遠端
 
-4.寫完push分支到遠端
-
-5.到 GitHub 專案 Pull requests 頁點擊 Compare & pull request 按鈕   
-
-6.撰寫 commit 內容 (對作業的疑問也可以寫在裡面)
+6.到 GitHub 專案 Pull requests 頁點擊 Compare & pull request 按鈕   
 
 7.回到學習系統點擊"新增作業"按鈕，發PR 
 (記得看過自我檢測再交)
