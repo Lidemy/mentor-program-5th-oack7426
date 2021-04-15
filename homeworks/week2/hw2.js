@@ -1,6 +1,6 @@
 // a-z
 function checkEng(num){
-    var reg= /^[a-z]+$/;
+    const reg = /^[a-z]+$/;
     return reg.test(num);
 }
 
