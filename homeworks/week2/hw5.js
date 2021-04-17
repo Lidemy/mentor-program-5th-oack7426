@@ -14,14 +14,26 @@
 // repeat('a', 5)，正確回傳值：aaaaa
 // repeat('yoyo', 2)正確回傳值：yoyoyoyo
 
-
+// join([1, 2, 3], '')，正確回傳值：123
 function join(arr, concatStr) {
-  
+  let str = [];
+  for (let i = 0; i< arr.length;i++){
+    let txt ='';
+    (i !== arr.length -1)?(txt = arr[i] + concatStr): (txt = arr[i]);
+    str.push(txt);
+  }
+  return str.join('');
 }
 
 function repeat(str, times) {
-  
+  let string = '';
+  for (let i = 0;i<times;i++){
+    string += str;
+  }
+  return string;
 }
+
+
 
 console.log(join(['a'], '!'));
 console.log(repeat('a', 5));
