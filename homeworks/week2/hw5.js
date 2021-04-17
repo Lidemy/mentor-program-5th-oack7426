@@ -16,11 +16,14 @@
 
 // join([1, 2, 3], '')，正確回傳值：123
 function join(arr, concatStr) {
+   if (arr.length === 0){
+       return '';
+   }
   let str = [];
   for (let i = 0; i< arr.length;i++){
-    let txt ='';
+    let txt ='';  
     (i !== arr.length -1)?(txt = arr[i] + concatStr): (txt = arr[i]);
-    str.push(txt);
+    str.push(txt); 
   }
   return str.join('');
 }
