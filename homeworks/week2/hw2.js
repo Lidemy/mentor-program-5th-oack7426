@@ -1,14 +1,15 @@
 // a-z
-function checkEng(num){
+function checkEng(str){
     const reg = /^[a-z]+$/;
-    return reg.test(num);
+    return reg.test(str);
 }
 
 function capitalize(str) {
   if(checkEng(str[0])){
-    str[0].toUpperCase();
+    return str[0].toUpperCase() + str.slice(1);
   }
   return str;
+  
 }
 
 console.log(capitalize('hello'));
