@@ -1,29 +1,77 @@
-// 你可以用 process.argv 這個陣列拿到相對應的參數，不妨先把它印出來觀察看看！
-// node hw2.js list // 印出前二十本書的 id 與書名 (OK)
-// node hw2.js read 1 // 輸出 id 為 1 的書籍 (OK)
-// node hw2.js delete 1 // 刪除 id 為 1 的書籍
-// node hw2.js create "I love coding" // 新增一本名為 I love coding 的書
-// node hw2.js update 1 "new name" // 更新 id 為 1 的書名為 new name
+/* eslint-disable */
+
 const request = require('request')
 
 const cmdName = process.argv[2]
 const param = process.argv[3]
+const bookName = process.argv[4]
 
-function getAPI(error, response, body) {
-  const info = JSON.parse(body)
-  const num = Number(param) - 1
-  switch (cmdName) {
-    case 'list':
-      for (let i = 0; i < 20; i++) {
-        console.log(info[i].id + info[i].name)
-      }
-      break
-    case 'read':
-      console.log(info[num].id + info[num].name)
-      break
-    case 'delete':
-      break
-  }
+function list() {
+  request({
+    url: 'https://lidemy-book-store.herokuapp.com/books',
+    method: 'GET'
+  }, function(error, response, body){
+    const json = JSON.parse(body)
+    for (let i = 0; i < 20; i++) {
+      console.log(json[i].id + json[i].name)
+    }
+  })
 }
 
-request('https://lidemy-book-store.herokuapp.com/books', getAPI)
+function read() {
+  request({
+    url: 'https://lidemy-book-store.herokuapp.com/books/' + param,
+    method: 'GET'
+  }, function(error, response, body){
+    const json = JSON.parse(body)
+    console.log(json.name)
+  })
+}
+
+function create() {
+  request({
+    url: 'https://lidemy-book-store.herokuapp.com/books',
+    method: 'POST',
+    json: {name:param}
+  }, function(error, response, body){
+    //console.log(body);
+  })
+}
+
+function deleteAPI() {
+  request({
+    url: 'https://lidemy-book-store.herokuapp.com/books/' + param,
+    method: 'DELETE'
+  }, function(error, response, body){
+    //console.log(body);
+  })
+}
+
+function update() {
+  request({
+    url: 'https://lidemy-book-store.herokuapp.com/books/' + param,
+    method: 'PATCH',
+    json: {name:bookName}
+  }, function(error, response, body){
+    //console.log(body);
+  });
+}
+
+switch (cmdName) {
+  case 'list':
+    list()
+    break;
+  case 'read':
+    read()
+    break;
+  case 'delete':
+    deleteAPI()
+    break;
+  case 'creat':
+    create()
+    break;
+  case 'update':
+    update()
+    break;
+}
+/* eslint-enable */
