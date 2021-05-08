@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const request = require('request')
 
 const cmdName = process.argv[2]
@@ -10,7 +8,7 @@ function list() {
   request({
     url: 'https://lidemy-book-store.herokuapp.com/books',
     method: 'GET'
-  }, function(error, response, body){
+  }, (error, response, body) => {
     const json = JSON.parse(body)
     for (let i = 0; i < 20; i++) {
       console.log(json[i].id + json[i].name)
@@ -20,9 +18,9 @@ function list() {
 
 function read() {
   request({
-    url: 'https://lidemy-book-store.herokuapp.com/books/' + param,
+    url: `https://lidemy-book-store.herokuapp.com/books/${param}`,
     method: 'GET'
-  }, function(error, response, body){
+  }, (error, response, body) => {
     const json = JSON.parse(body)
     console.log(json.name)
   })
@@ -32,46 +30,39 @@ function create() {
   request({
     url: 'https://lidemy-book-store.herokuapp.com/books',
     method: 'POST',
-    json: {name:param}
-  }, function(error, response, body){
-    //console.log(body);
-  })
+    json: { name: param }
+  }, (error, response, body) => {})
 }
 
 function deleteAPI() {
   request({
-    url: 'https://lidemy-book-store.herokuapp.com/books/' + param,
+    url: `https://lidemy-book-store.herokuapp.com/books/'${param}`,
     method: 'DELETE'
-  }, function(error, response, body){
-    //console.log(body);
-  })
+  }, (error, response, body) => {})
 }
 
 function update() {
   request({
-    url: 'https://lidemy-book-store.herokuapp.com/books/' + param,
+    url: `https://lidemy-book-store.herokuapp.com/books/'${param}`,
     method: 'PATCH',
-    json: {name:bookName}
-  }, function(error, response, body){
-    //console.log(body);
-  });
+    json: { name: bookName }
+  }, (error, response, body) => {})
 }
 
 switch (cmdName) {
   case 'list':
     list()
-    break;
+    break
   case 'read':
     read()
-    break;
+    break
   case 'delete':
     deleteAPI()
-    break;
+    break
   case 'creat':
     create()
-    break;
+    break
   case 'update':
     update()
-    break;
+    break
 }
-/* eslint-enable */
