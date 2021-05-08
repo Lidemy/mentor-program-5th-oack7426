@@ -6,11 +6,11 @@ const bookName = process.argv[4]
 
 function list() {
   request({
-    url: 'https://lidemy-book-store.herokuapp.com/books',
+    url: 'https://lidemy-book-store.herokuapp.com/books?_limit=20',
     method: 'GET'
   }, (error, response, body) => {
     const json = JSON.parse(body)
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < json.length; i++) {
       console.log(json[i].id + json[i].name)
     }
   })
@@ -31,22 +31,22 @@ function create() {
     url: 'https://lidemy-book-store.herokuapp.com/books',
     method: 'POST',
     json: { name: param }
-  }, (error, response, body) => {})
+  })
 }
 
 function deleteAPI() {
   request({
-    url: `https://lidemy-book-store.herokuapp.com/books/'${param}`,
+    url: `https://lidemy-book-store.herokuapp.com/books/${param}`,
     method: 'DELETE'
-  }, (error, response, body) => {})
+  })
 }
 
 function update() {
   request({
-    url: `https://lidemy-book-store.herokuapp.com/books/'${param}`,
+    url: `https://lidemy-book-store.herokuapp.com/books/${param}`,
     method: 'PATCH',
     json: { name: bookName }
-  }, (error, response, body) => {})
+  })
 }
 
 switch (cmdName) {
@@ -59,7 +59,7 @@ switch (cmdName) {
   case 'delete':
     deleteAPI()
     break
-  case 'creat':
+  case 'create':
     create()
     break
   case 'update':
