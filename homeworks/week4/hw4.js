@@ -11,6 +11,9 @@ function TopGames() {
   }, (error, response, body) => {
     const json = JSON.parse(body)
     const jsonTop = json.top
+    if (error) {
+      return console.log('失敗', error)
+    }
     for (let i = 0; i < jsonTop.length; i++) {
       console.log(`${jsonTop[i].viewers} ${jsonTop[i].game.name}`)
     }

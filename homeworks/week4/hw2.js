@@ -1,15 +1,19 @@
 const request = require('request')
 
+const API = 'https://lidemy-book-store.herokuapp.com/books'
 const cmdName = process.argv[2]
 const param = process.argv[3]
 const bookName = process.argv[4]
 
 function list() {
   request({
-    url: 'https://lidemy-book-store.herokuapp.com/books?_limit=20',
+    url: `${API}?_limit=20`,
     method: 'GET'
   }, (error, response, body) => {
     const json = JSON.parse(body)
+    if (error) {
+      return console.log('失敗:', error)
+    }
     for (let i = 0; i < json.length; i++) {
       console.log(json[i].id + json[i].name)
     }
@@ -18,34 +22,49 @@ function list() {
 
 function read() {
   request({
-    url: `https://lidemy-book-store.herokuapp.com/books/${param}`,
+    url: `${API}/${param}`,
     method: 'GET'
   }, (error, response, body) => {
     const json = JSON.parse(body)
+    if (error) {
+      return console.log('失敗:', error)
+    }
     console.log(json.name)
   })
 }
 
 function create() {
   request({
-    url: 'https://lidemy-book-store.herokuapp.com/books',
+    url: `${API}`,
     method: 'POST',
     json: { name: param }
+  }, (error, response) => {
+    if (error) {
+      return console.log('失敗:', error)
+    }
   })
 }
 
 function deleteAPI() {
   request({
-    url: `https://lidemy-book-store.herokuapp.com/books/${param}`,
+    url: `${API}/${param}`,
     method: 'DELETE'
+  }, (error, response) => {
+    if (error) {
+      return console.log('失敗:', error)
+    }
   })
 }
 
 function update() {
   request({
-    url: `https://lidemy-book-store.herokuapp.com/books/${param}`,
+    url: `${API}/${param}`,
     method: 'PATCH',
     json: { name: bookName }
+  }, (error, response) => {
+    if (error) {
+      return console.log('失敗:', error)
+    }
   })
 }
 
