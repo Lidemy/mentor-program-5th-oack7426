@@ -37,7 +37,7 @@ function create() {
   request({
     url: `${API}`,
     method: 'POST',
-    json: { name: param }
+    form: { name: param }
   }, (error, response) => {
     if (error) {
       return console.log('失敗:', error)
@@ -60,7 +60,7 @@ function update() {
   request({
     url: `${API}/${param}`,
     method: 'PATCH',
-    json: { name: bookName }
+    form: { name: bookName }
   }, (error, response) => {
     if (error) {
       return console.log('失敗:', error)
