@@ -1,0 +1,76 @@
+/**************************/
+
+// hw1 - 抽獎畫面
+
+/**************************/
+@import "./_component.scss";
+
+.top-section,
+.result-section{
+    text-align: center;
+    // min-height: calc(100vh - 300px);
+    .btn-wrap{
+        padding: 36px 0;
+        text-align: center;
+    }
+    .is-btn{
+        padding: 18px 160px;
+        color: #fff;
+        text-align: center;
+        border-radius: 8px;
+        background-color: #e62a45;
+    }
+}
+
+// 抽獎頁
+.top-section{
+    padding: 50px 0;
+    background: url(../img/games-banner.png);
+    @include bg;
+    background-size: cover;
+    article{
+        width: 500px;
+        padding: 25px 20px;
+        border-radius: 16px;
+        background: #fff;
+        margin: 0 auto;
+    }
+    h2{
+        padding: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #5ec1b6;
+
+    }
+    table{
+        color: #322929;
+        th,td{
+            padding: 18px 0 25px;
+            border-bottom:1px dotted;
+        }
+        th{
+            font-weight: bold;
+            font-size: 18px;
+        }
+        td{
+            text-align: left;
+            line-height: 1.63;
+
+        }
+    }
+    
+    
+}
+// 結果頁
+.result-section{
+    padding: 240px 0;
+    text-align: center;
+    background: url(../img/result-banner.png);
+    @include bg;
+    background-size: cover;
+    h2{
+        font-size: 36px;
+    }
+
+}

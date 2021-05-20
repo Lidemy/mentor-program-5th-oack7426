@@ -1,0 +1,79 @@
+/**************************/
+
+// hw2 - 表單
+
+/**************************/
+@import "_reset.scss";
+
+body{
+    background: #F1F1F1;
+    padding: 120px 20px;
+    font-family: Microsoft JhengHei,'微軟正黑體',sans-serif;
+    font-size: 14px;
+}
+main{
+    padding: 35px 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-top: solid 6px #fad312;
+    .title-wrap{
+        padding-bottom: 55px;
+        h1{
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+        p{
+           padding-bottom: 10px; 
+           &:last-child{
+               padding-bottom: 20px;
+           }
+        }
+        span{
+            font-size: 16px;
+            color: #e74149;
+        }
+    }
+    .input-box{
+        padding-bottom: 50px;
+        h3{
+            font-size: 20px;
+            padding-bottom: 30px;
+           
+            span{
+                color: #e74149;
+                padding-left: 5px;
+            }
+        }
+        input[type="text"]{
+            border: solid 1px #d0d0d0;
+            padding: 5px 3px;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+        }
+       label{
+           display: block;
+           padding-bottom: 23px;
+       }
+    }
+    .other-box{
+        h3{
+            padding-bottom: 12px;
+        }
+        p{
+            padding-bottom: 30px;
+        }
+    }
+    button{
+        border: none;
+        padding: 10px 30px;
+        border-radius: 3px;
+        background-color: #fad312;
+        margin-bottom: 34px;
+        &:hover{
+            opacity: .7;
+        }
+    }
+}

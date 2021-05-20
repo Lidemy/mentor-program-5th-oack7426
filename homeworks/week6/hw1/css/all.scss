@@ -1,0 +1,149 @@
+/**************************/
+
+// hw1
+// 設計稿 https://app.zeplin.io/project/5eab7fd61be0341bdeed0db0/screen/5eab888623964b1b1214a9d3
+
+/**************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import "_reset.scss";
+@import "_rwd.scss";
+@import "_component.scss";
+
+
+body{
+    font-family: Microsoft JhengHei,'微軟正黑體',sans-serif;
+    font-size: 16px;
+}
+*,*::before,*::after{
+    color: #010101;
+}
+
+main{
+    padding-top: 90px;
+    padding-bottom: 210px;
+    min-height: calc(100vh - 300px);
+}
+a{
+    text-decoration: none;
+}
+p{
+    line-height: 1.6;
+}
+
+.is-en{
+    font-family: 'Questrial', sans-serif;
+}
+
+.is-center{
+    text-align: center;
+}
+.is-max-width{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.is-title{
+    font-weight: bold;
+    font-size: 36px;
+    padding: 0 17px;
+    border-left: 15px solid #a3dea2 ;
+    display: inline-block;
+}
+.is-btn{
+    display: inline-block;
+    &:hover{
+        opacity: .7;
+    }
+}
+.is-gre{
+    color: #77a076;
+}
+.is-red{
+    color: #ff7286;
+}
+
+//header
+header{
+    padding: 20px 0;
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #fff;
+    z-index: 99;
+}
+header nav{
+    @include flex-between;
+    .menu-icon{
+        display: none;
+        @include phone-l{
+            display: block;
+        }
+    }
+    h1 a{
+        color: #489846;
+        font-size: 36px;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include flex-between;
+        @include phone-l{
+            display: none;
+        }
+        li a{
+            display: block;
+            padding: 15px 25px;
+            font-size: 18px;
+            &:hover{
+                opacity: .7;
+            }
+        }
+        li a.lottery-btn{
+            background: #ff7286;
+            border-radius: 8px;
+            color: #fff;
+           
+        }
+    }
+}
+//footer
+footer{
+    font-size: 14px;
+    color: #484848;
+    margin-top: -210px;
+    .info-box{
+        padding: 35px 0;
+        background: #e8efee;
+        >div{
+            @include flex-between;
+            align-items: flex-start;
+            @include phone-l{
+                flex-direction: column;
+            }
+        }
+        ul.left-inbox li{
+            padding: 5px 0;
+        }
+        div.right-inbox{
+            .logo{
+                color: #489846;
+                font-size: 36px;
+            }
+            .community{
+                font-size: 14px;
+                color: #484848;
+                margin-top: 5px;
+            }
+        }
+    }
+    .copyright-box{
+        text-align: center;
+        color: #fff;
+        padding: 15px 0;
+        background-color: #35564b;
+    }
+}
