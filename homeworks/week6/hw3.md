@@ -43,7 +43,7 @@
 
 ##### `position: absolute` 絕對定位 (子元素)
 元素直接浮空，會影響其他元素位置  
-定位點是往上找第一個 `position` 不是 `static` 的元素（`fixed`/`relative`/`absolute`）
+定位點是往上找第一個 `position` 不是 `static` 的元素
 
 
 ##### `position: fixed` 浮動元素
