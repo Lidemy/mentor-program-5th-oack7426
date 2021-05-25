@@ -25,7 +25,7 @@
 元素均在同一行呈現，不論是圖片還是文字都是。不可設定寬高，寬高是由元素本身自行撐開。
 
 ##### `display: inline-block` 區塊元素
-介於 `display: inline` 跟 `display: block` 之間
+整合 `display: inline` 跟 `display: block` 特性
 具備 `display: block` 完整盒模型功能，但不會預設撐到最寬佔滿整個容器，跟 `display: inline` 一樣預設寬度是由內容撐開的
 
 ##### `display: block` 塊狀元素

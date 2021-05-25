@@ -31,35 +31,35 @@ p{
     line-height: 1.6;
 }
 
-.is-en{
+.en{
     font-family: 'Questrial', sans-serif;
 }
 
-.is-center{
+.center{
     text-align: center;
 }
-.is-max-width{
+.max-width{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
-.is-title{
+.title{
     font-weight: bold;
     font-size: 36px;
     padding: 0 17px;
     border-left: 15px solid #a3dea2 ;
     display: inline-block;
 }
-.is-btn{
+.btn{
     display: inline-block;
     &:hover{
         opacity: .7;
     }
 }
-.is-gre{
+.gre{
     color: #77a076;
 }
-.is-red{
+.red{
     color: #ff7286;
 }
 
@@ -76,8 +76,13 @@ header{
 }
 header nav{
     @include flex-between;
-    .menu-icon{
+    .menu-btn{
         display: none;
+        background: url(../img/menu.svg);
+        width: 48px;
+        height: 48px;
+        border: none;
+        @include bg;
         @include phone-l{
             display: block;
         }
@@ -86,13 +91,25 @@ header nav{
         color: #489846;
         font-size: 36px;
     }
-    ul {
+    .menu {
         display: flex;
         align-items: center;
         justify-content: space-between;
         @include flex-between;
         @include phone-l{
             display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom:0;
+            top: 88px;
+            background: #fff;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 0;
+        }
+        &.active{
+            display: flex;
         }
         li a{
             display: block;
@@ -143,7 +160,8 @@ footer{
     .copyright-box{
         text-align: center;
         color: #fff;
-        padding: 15px 0;
+        padding: 15px 20px;
+        line-height: 1.5;
         background-color: #35564b;
     }
 }
