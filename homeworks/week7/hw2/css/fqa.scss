@@ -1,0 +1,27 @@
+/**************************/
+
+// hw1 - FAQ - 常見問題
+
+/**************************/
+
+.qa-section{
+    padding: 75px 0 40px;
+    .qa-box{
+        display: block;
+        border-bottom: 1px solid #a6e2c0;
+        padding: 30px 20px 0;
+        h4{
+            font-size: 18px;
+            padding-bottom: 25px;
+            span{
+                font-size: 24px;
+                color: #70b282;
+                display: inline-block;
+                width: 50px;
+            }
+        }
+        .qa-inbox{
+            padding-bottom: 45px;
+        }
+    }
+}
