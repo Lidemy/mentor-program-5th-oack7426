@@ -1,60 +1,55 @@
-/* eslint-disable */
-// 這一個作業要讓大家實作出基本的 todo list，功能包括：
-// 可以新增 todo (OK)
-// 可以刪除 todo (OK)
-// 差動態元素綁定
-// 可以標記 todo 為完成/未完成
-
-const $submit = document.getElementById('submit');
-const $input = document.getElementById('input')
-const $deleteBtn = document.querySelectorAll('.delete-btn')
-const $undone = document.getElementById('undone')
-const $done = document.getElementById('done')
-const $click = document.querySelectorAll('.click')
-let undoneList = ''
-let doneList = ''
 // add
-$submit.addEventListener('click', () => {
-  if ($input.value == "") {
+function add() {
+  const $list = document.getElementById('list')
+  const $input = document.getElementById('input')
+  const newList = document.createElement('li')
+  if ($input.value === '') {
     alert('請輸入內容')
     return
   }
-  undoneList = `
-  <li>
-    <label>
-      <input class="click" type="checkbox">
-      <p>${$input.value}</p>
-    </label>
-    <button class="delete-btn">Ｘ</button>
-  </li>`
+  const undoneList = `
+      <label>
+        <input class="click" type="checkbox">
+        <p>${$input.value}</p>
+        <i class="done-icon">已完成</i>
+      </label>
+      <button class="delete-btn">Ｘ</button>`
 
-  $undone.insertAdjacentHTML('beforeend', undoneList)
-})
+  newList.innerHTML = undoneList
+  $list.appendChild(newList)
+}
 
 // delete
-for (let i = 0; i < $deleteBtn.length; i++) {
-  $deleteBtn[i].addEventListener('click', (e) => {
-    const $listContent = document.querySelector($deleteBtn[i].parentNode.nodeName)
-    $listContent.remove()
-  })
+function deleteEl(el) {
+  const elParent = el.parentNode
+  elParent.remove()
 }
-// 未完成已完成 (目前有bug)
+function deleteList() {
+  const $deleteBtn = document.querySelectorAll('.delete-btn')
+  for (let i = 0; i < $deleteBtn.length; i++) {
+    $deleteBtn[i].addEventListener('click', (e) => {
+      deleteEl(e.target)
+    })
+  }
+} deleteList()
 
-// for (let i = 0; i < $click.length; i++) {
-//   $click[i].addEventListener('click', () => {
-//     const $listContent = document.querySelector($click[i].parentNode.parentNode.parentNode.nodeName)
-//     if($click[i].checked){
-//       doneList = $listContent.innerHTML
-//       console.log(doneList)
-//       // $done.insertAdjacentHTML('beforeend', doneList)
-//       // $listContent.remove()
-//     }
-//     if(!$click[i].checked){
-//       undoneList = $listContent.innerHTML
-//       console.log(undoneList)
-//       // $undone.insertAdjacentHTML('beforeend', undoneList)
-//       // $listContent.remove()
-//     }
-//   })
-// }
-/* eslint-enable */
+// toggle
+function toogleCheck() {
+  const $check = document.querySelectorAll('#list input')
+  for (let i = 0; i < $check.length; i++) {
+    $check[i].addEventListener('click', (e) => {
+      if (e.currentTarget.checked) {
+        $check[i].nextElementSibling.nextElementSibling.classList.toggle('show', true)
+      } else {
+        $check[i].nextElementSibling.nextElementSibling.classList.toggle('show', false)
+      }
+    })
+  }
+} toogleCheck()
+
+const $submit = document.getElementById('submit')
+$submit.addEventListener('click', () => {
+  add()
+  deleteList()
+  toogleCheck()
+})

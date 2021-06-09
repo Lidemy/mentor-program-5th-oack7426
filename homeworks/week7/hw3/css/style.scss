@@ -75,6 +75,18 @@ main{
         input:checked ~ *{
           text-decoration:line-through;
         }
+        .done-icon{
+          display: none;
+          color: #fff;
+          background: #064420;
+          border-radius: 4px;
+          padding: 2px 4px;
+          font-size: 13px;
+          margin-left: 10px;
+          &.show{
+            display: inline-block;
+          }
+        }
       }
     }
   }
