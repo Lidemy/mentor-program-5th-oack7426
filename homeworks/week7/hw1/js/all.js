@@ -1,10 +1,3 @@
-// 暱稱是否為空
-// 電子郵件是否為空
-// 手機號碼是否為空
-// 報名類型是否有勾選
-// 怎麼知道這個活動的是否為空
-// 如果沒有通過檢查，請在欄位的 input 下方顯示紅字提醒，有通過的話跳出一個 alert 展示使用者填寫的資料。 （ＯＫ）
-
 const $input = document.querySelectorAll('.hasValue')
 const $title = document.querySelectorAll('h3')
 const $radio = document.querySelectorAll('input[type="radio"]')
