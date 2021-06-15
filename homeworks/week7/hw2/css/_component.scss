@@ -1,0 +1,16 @@
+// compponent
+$carnation:#ff7286;
+$light-teallight-teal:#a8e8e1;
+
+
+@mixin flex-between  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin bg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

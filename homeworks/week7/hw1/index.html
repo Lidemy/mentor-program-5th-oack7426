@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>新拖延運動報名表單</title>
+</head>
+<body>
+    <main>
+        <div class="title-wrap">
+            <h1>新拖延運動報名表單</h1>
+            <p>活動日期：2020/12/10 ~ 2020/12/11</p>
+            <p>活動地點：台北市大安區新生南路二段1號</p>
+            <span>*必填</span>
+        </div>
+        <form action="">
+            <div class="input-box">
+                <h3 class="required">暱稱 </h3>
+                <input type="text" class="hasValue" placeholder="您的回答">
+                <p class="error" style="display: none;">此欄位為必填</p>
+            </div>
+            <div class="input-box">
+                <h3 class="required">電子郵件 </h3>
+                <input type="email" class="hasValue" placeholder="您的電子郵件">
+                <p class="error" style="display: none;">此欄位為必填</p>
+            </div>
+            <div class="input-box">
+                <h3 class="required">手機號碼 </h3>
+                <input type="tel" class="hasValue" placeholder="您的手機號碼">
+                <p class="error" style="display: none;">此欄位為必填</p>
+            </div>
+            <div class="input-box">
+                <h3 class="required">報名類型 </h3>
+                <label for="A">
+                    <input type="radio" name="list" value="imagination" id="A">
+                    <span>躺在床上用想像力實作</span>
+                </label>
+                <label for="B">
+                    <input type="radio" name="list" value="readyMade" id="B">
+                    <span>趴在地上滑手機找現成的</span>
+                </label>
+                <p class="error" style="display: none;">此欄位為必填</p>
+            </div>
+            <div class="input-box">
+                <h3 class="required">怎麼知道這個活動的？</h3>
+                <input type="text" class="hasValue" placeholder="您的回答">
+                <p class="error" style="display: none;">此欄位為必填</p>
+            </div>
+            <div class="input-box other-box">
+                <h3>其他 </h3>
+                <p>對活動的一些建議</p>
+                <input type="text" class="hasValue" placeholder="您的回答">
+            </div>
+            <button id="submit" type="submit">提交</button>
+            <p class="tips">請勿透過表單送出您的密碼。</p>
+        </form>
+    </main>
+    <footer>
+        © 2020 © Copyright. All rights Reserved.
+    </footer>
+    <script src="./js/all.js"></script>
+</body>
+
+</html>
