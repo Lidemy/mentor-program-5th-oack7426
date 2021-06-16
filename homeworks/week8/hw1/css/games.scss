@@ -1,0 +1,119 @@
+/**************************/
+
+// hw1 - 抽獎畫面
+
+/**************************/
+@import "./_component.scss";
+@import"./_rwd.scss";
+
+.top-section,
+.result-section{
+    text-align: center;
+    // min-height: calc(100vh - 300px);
+    .btn-wrap{
+        padding: 36px 0;
+        text-align: center;
+    }
+    .btn{
+        padding: 18px 160px;
+        color: #fff;
+        text-align: center;
+        border-radius: 8px;
+        background-color: #e62a45;
+        @include phone-l{
+            padding: 18px 0px;
+            display: block; 
+        }
+    }
+}
+
+// 抽獎頁
+.top-section{
+    padding: 50px 20px;
+    background: url(../img/games-banner.png);
+    @include bg;
+    background-size: cover;
+    article{
+        max-width: 500px;
+        padding: 25px 20px;
+        border-radius: 16px;
+        background: #fff;
+        margin: 0 auto;
+    }
+    h2{
+        padding: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #5ec1b6;
+
+    }
+    table{
+        color: #322929;
+        th,td{
+            padding: 18px 0 25px;
+            border-bottom:1px dotted;
+        }
+        th{
+            font-weight: bold;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+        td{
+            text-align: left;
+            line-height: 1.63;
+
+        }
+    }
+    
+    
+}
+// 結果頁
+.result-section{
+    padding: 240px 20px;
+    text-align: center;
+    position: relative;
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        opacity: .5;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    h2{
+        font-size: 36px;
+        padding-bottom: 20px;
+    }
+   
+    &.first-section::before{
+        background: url(../img/1.jpg);
+        @include bg;
+        background-size: cover;
+        z-index: -1;
+    }
+    &.second-section::before{
+        background: url(../img/2.jpg);
+        @include bg;
+        background-size: cover;
+        z-index: -1;
+    }
+    &.third-section::before{
+        background: url(../img/3.jpg);
+        @include bg;
+        background-size: cover;
+        z-index: -1;
+    }
+    &.none-section{
+        background: #000;
+        &::before{
+            display: none;
+        }
+        h2{
+            color: #fff;
+        }
+    }
+
+}

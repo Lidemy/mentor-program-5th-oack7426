@@ -1,0 +1,141 @@
+/**************************/
+
+// hw1 - 首頁
+
+/**************************/
+@import "_rwd.scss";
+@import "./_component.scss";
+
+
+section{
+    padding-top: 80px;
+    margin-bottom: 40px;
+}
+
+h3{
+    margin-bottom: 40px;
+}
+// 咬一口廚房
+.top-section{
+    background: url(../img/banner.jpg);
+    @include bg;
+    background-size: cover;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba($color: #000000, $alpha: 0.2);
+
+    }
+    h2{
+        padding: 255px 0;
+        text-align: center;
+        color: #fff;
+        font-size: 60px;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+    }
+    
+}
+// 當輕食之風盛起
+.lightfood-section{
+    padding-bottom: 120px;
+    >div{
+        p{
+            line-height: 2;
+        }
+    }
+    .btn-box{
+        margin-top: 80px;
+    }
+    .btn{
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 0.32px;
+        padding: 60px 70px;
+        border-radius: 10px;
+        margin: 0 12px;
+        &:first-child{
+            @include phone-l{
+                margin-bottom: 20px;
+            }
+        }
+        &.btn-order{
+            background: $light-teallight-teal;
+        }
+        &.btn-inquire{
+            background: #f9f9b5;
+        }
+    }
+}
+// Menu 搶先看
+.menu-section{
+    figure{
+        @include flex-between;
+        overflow: hidden;
+        @include phone-l{
+            flex-direction: column;
+        }
+        img{
+            flex: 1;
+            width: 20%;
+            @include phone-l{
+                width: 100%;
+            }
+        }
+    }
+}
+// 吃過都說好
+.saygood-section{
+    >div{
+        @include flex-between;
+        @include ipad-s{
+         flex-direction: column;   
+        }
+    }
+    img{
+       width: 106px;
+       border-radius: 50vh; 
+       border: solid 1px #c1c1c1;
+    }
+    article{
+        border-radius: 5px;
+        box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+        border: solid 1px #c7e5ec;
+        padding: 40px 25px;
+        margin-top: 100px;
+        
+        h6{
+            padding: 5px 0;
+        }
+        &:nth-child(2){
+            margin-left:16px;
+            margin-right:16px;
+            @include ipad-s{
+                margin-left:0;
+                margin-right:0;
+               }
+        }
+        >div{
+            margin-top: -100px;
+        }
+        p{
+            margin-top: 23px;
+            letter-spacing: 0.14px;
+            line-height: 1.5;
+        }
+       
+    }
+}
+// 我們在哪裡 
+.map-section{
+    max-width: 100%;
+    iframe{
+        max-width: 100%;
+    }
+}
