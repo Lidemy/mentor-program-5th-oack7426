@@ -45,8 +45,10 @@ header{
             padding: 5px 10px;
             font-size: 13px;
             color: #fff;
+            border-bottom: 1px solid transparent;
             &:hover{
                 opacity: .7;
+                border-color: #fff;
             }
         }
     }
