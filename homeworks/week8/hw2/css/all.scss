@@ -5,6 +5,9 @@ a,*{
     color: #333;
     text-decoration: none;
 }
+*{
+    line-height: 1.5;
+}
 body{
     background: #e8e8e8;
     // background: linear-gradient(125deg, #7D36D9, #9C7BA0);
@@ -63,6 +66,9 @@ main{
         font-weight: bold;
         text-align: center;
         font-size: 25px;
+        b{
+            color: #9147FF;
+        }
     }
     .list-wrap{
         display: flex;
@@ -74,19 +80,24 @@ main{
         &::after{
             content: "";
             display: inline-block;
-            width: 300px;
+            width: 350px;
         }
         // @include ipad-l{
         // }
 
     }
     .list-box{
-        
+        width: 350px;
         color: #fff;
         margin: 20px 10px;
         display: block;
         transition: all .2s;
         border: 4px solid transparent;
+        img{
+            width: 350px;
+            height: 180px;
+            object-fit: cover;
+        }
         &:hover{
             transform: translateY(-10px);
             border-color: #9147FF;
@@ -94,11 +105,6 @@ main{
         // @include ipad-l{
         //     margin-right: auto;
         // }
-        >img{
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
         .list-info-box{
             background: #333;
             display: flex;
@@ -117,7 +123,13 @@ main{
                 h3{
                     color: #fff;
                     font-size: 20px;
-                    padding-bottom: 5px;
+                    margin-bottom: 5px;  
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                     -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    // height: 60px;
                     
                 }
                 p{
