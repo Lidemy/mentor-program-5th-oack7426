@@ -1,17 +1,7 @@
-// 請串接 Twitch API，顯示出目前最熱門的 5 個遊戲 (OK)
-// 把第一個遊戲塞到版面上，其他的如法泡製 (OK)
-// 把第三個熱門遊戲的串接改為function (OK)
-// 試著把5個熱門遊戲的串接改為function 跑迴圈(OK)
-// 先把 5個遊戲 的ajax都寫好直接顯示在版面上，不要思考點擊後在呼叫的問題 (OK)
-// 把 header 綁 data ， data 內容是 id 板塊名 （存在一個陣列裡），綁 click 事件，點擊後對應的 id 板塊會打開
-
-// 點下去之後可以顯示正在直播這遊戲的前 20 個實況（要剛好 20 個）
-// 可以切換不同的遊戲，顯示不同遊戲的熱門實況。
-
+// id
+const idList = ['firstGames', 'secondGames', 'thirdGames', 'fourthGames', 'fifthGames']
 // 熱門的 5 個遊戲名稱
 const fiveTopGames = []
-// id 們
-const idList = ['firstGames', 'secondGames', 'thirdGames', 'fourthGames', 'fifthGames']
 
 // 熱門的 5 個遊戲名稱 header
 const request = new XMLHttpRequest()
