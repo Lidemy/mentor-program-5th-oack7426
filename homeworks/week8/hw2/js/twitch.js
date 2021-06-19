@@ -21,7 +21,7 @@ request.onload = () => {
     for (let i = 0; i < 5; i++) {
       const $menu = document.getElementById('menu')
       const li = document.createElement('li')
-      li.innerHTML = `<a href="">${json.top[i].game.name}</a>`
+      li.innerHTML = `<a href="javascript:;" data-id="${idList[i]}" class="menu-btn">${json.top[i].game.name}</a>`
       $menu.appendChild(li)
       fiveTopGames.push(json.top[i].game.name)
     }
@@ -36,6 +36,18 @@ request.open('GET', 'https://api.twitch.tv/kraken/games/top?limit=5', false)
 request.setRequestHeader('client-id', 'h03ykqwbe67bo8bvvl6wegc3ampete')
 request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
 request.send()
+
+// menu 綁 click 事件
+const $menuBtn = document.querySelectorAll('.menu-btn')
+for (let i = 0; i < $menuBtn.length; i++) {
+  $menuBtn[i].addEventListener('click', (e) => {
+    e.preventDefault()
+    for (let j = 0; j < idList.length; j++) {
+      document.getElementById(idList[j]).style.display = 'none'
+    }
+    document.getElementById($menuBtn[i].dataset.id).style.display = 'block'
+  })
+}
 
 // 熱門遊戲 20 個直播
 function ajax(id, gameName) {
