@@ -11,7 +11,7 @@
   <?php require_once('header.php'); ?>
   <?php 
   $id = $_GET['id'];
-  $sql = "SELECT * FROM articles WHERE id = ?";
+  $sql = "SELECT * FROM oack7426_articles WHERE id = ?";
   $stmt = $conn -> prepare($sql);
   $stmt -> bind_param('s',$id);
   $result = $stmt ->execute();

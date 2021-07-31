@@ -10,7 +10,7 @@
     header('Location: ./login.php?error=ture');
     die('有欄位為空值，請重新提交');
   }
-  $sql = "select * from users where username =?";
+  $sql = "select * from oack7426_users where username =?";
   $stmt = $conn -> prepare($sql);
   $stmt -> bind_param('s',$username);
   $result = $stmt ->execute();

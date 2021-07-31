@@ -16,7 +16,7 @@
     </div>
     <div class="card-wrap">
       <?php
-      $sql = "SELECT * FROM articles ORDER BY created_at DESC LIMIT 5";
+      $sql = "SELECT * FROM oack7426_articles ORDER BY created_at DESC LIMIT 5";
       $stmt = $conn -> prepare($sql);
       $result = $stmt ->execute();
       $result = $stmt -> get_result(); 

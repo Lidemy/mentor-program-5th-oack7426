@@ -6,7 +6,7 @@
   if(empty($content)){
     die('有欄位為空值，請重新提交');
   }
-  $sql = "UPDATE comments SET content = ? WHERE id = ?";
+  $sql = "UPDATE oack7426_comments SET content = ? WHERE id = ?";
   $stmt = $conn -> prepare($sql);
   $stmt -> bind_param('ss',$content,$id);
   $result = $stmt -> execute();

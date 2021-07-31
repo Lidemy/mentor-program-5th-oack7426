@@ -16,7 +16,7 @@
     </div>
     <div class="card-wrap">
       <?php
-      $sql = "SELECT * FROM articles ORDER BY created_at DESC"; // 按照時間排序 （最新最上面）
+      $sql = "SELECT * FROM oack7426_articles ORDER BY created_at DESC"; // 按照時間排序 （最新最上面）
       $result = $conn->query($sql);
       while ($row = $result->fetch_assoc()) {
         echo '<div class="card">';

@@ -8,7 +8,7 @@
   if(empty($title) || empty($content)){ 
     die('有欄位為空值，請重新提交');
   }
-  $sql = "INSERT INTO articles(title, content) VALUES ('$title','$content')";
+  $sql = "INSERT INTO oack7426_articles(title, content) VALUES ('$title','$content')";
   $result = $conn ->query($sql);
 
   if($result){

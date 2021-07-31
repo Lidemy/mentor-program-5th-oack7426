@@ -13,7 +13,7 @@
     <h2>文章列表</h2>
     <div class="card-wrap">
       <?php
-      $sql = "SELECT * FROM articles ORDER BY created_at DESC";
+      $sql = "SELECT * FROM oack7426_articles ORDER BY created_at DESC";
       $stmt = $conn -> prepare($sql);
       $result = $stmt ->execute();
       $result = $stmt -> get_result(); 

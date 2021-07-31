@@ -19,7 +19,7 @@
     <h2>留言板｜編輯身份類別</h2>
     <?php 
       $username = $_GET['username'];
-      $sql = "SELECT * FROM users WHERE username = ?";
+      $sql = "SELECT * FROM oack7426_users WHERE username = ?";
       $stmt = $conn -> prepare($sql);
       $stmt -> bind_param('s',$username);
       $result = $stmt -> execute();

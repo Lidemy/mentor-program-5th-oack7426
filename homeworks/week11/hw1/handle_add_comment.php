@@ -2,7 +2,7 @@
   require_once('conn.php');
   require_once('utils.php');
 
-  $user_sql = "select * from users where username = ?";
+  $user_sql = "select * from oack7426_users where username = ?";
   $user_stmt = $conn -> prepare($user_sql);
   $user_stmt -> bind_param('s',$username);
   $user_result = $user_stmt  ->execute();
@@ -16,7 +16,7 @@
     die('有欄位為空值，請重新提交');
   }
 
-  $sql = "INSERT INTO comments(nickname,username, content) VALUES (?,?,?)";
+  $sql = "INSERT INTO oack7426_comments(nickname,username, content) VALUES (?,?,?)";
   $stmt = $conn -> prepare($sql);
   $stmt -> bind_param('sss',$nickname,$username,$content);
   $result = $stmt ->execute();

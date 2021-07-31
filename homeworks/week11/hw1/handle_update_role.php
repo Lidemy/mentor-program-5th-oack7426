@@ -6,7 +6,7 @@
   if(empty($role)){
     die('有欄位為空值，請重新提交');
   }
-  $sql = "UPDATE users SET role = ? WHERE username = ?";
+  $sql = "UPDATE oack7426_users SET role = ? WHERE username = ?";
   $stmt = $conn -> prepare($sql);
   $stmt -> bind_param('ss',$role,$username);
   $result = $stmt -> execute();

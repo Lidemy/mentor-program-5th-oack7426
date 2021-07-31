@@ -20,7 +20,7 @@
     <div class="board-wrap">
       <div class="board-content">
         <?php
-          $sql = "SELECT comments.nickname,comments.content,comments.created_at, users.role FROM comments INNER JOIN users ON comments.username = users.username ORDER BY created_at DESC";
+          $sql = "SELECT oack7426_comments.nickname,oack7426_comments.content,oack7426_comments.created_at, oack7426_users.role FROM oack7426_comments INNER JOIN oack7426_users ON oack7426_comments.username = oack7426_users.username ORDER BY created_at DESC";
           $stmt = $conn -> prepare($sql);
           $result = $stmt ->execute();
           $result = $stmt -> get_result(); 

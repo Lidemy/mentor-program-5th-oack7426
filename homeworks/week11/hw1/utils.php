@@ -9,7 +9,7 @@
     $username = $_SESSION['username'];
   }
   // 撈取使用者身份
-  $role_sql = "SELECT * FROM users WHERE username = ?";
+  $role_sql = "SELECT * FROM oack7426_users WHERE username = ?";
   $role_stmt = $conn -> prepare($role_sql);
   $role_stmt -> bind_param('s',$username);
   $role_result = $role_stmt ->execute();

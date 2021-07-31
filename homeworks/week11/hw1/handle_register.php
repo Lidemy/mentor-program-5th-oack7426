@@ -11,7 +11,7 @@
     header('Location: ./register.php?error=ture');
     die('有欄位為空值，請重新提交');
   }
-  $sql = "INSERT INTO users(nickname, username,password ) VALUES (?,?,?)";
+  $sql = "INSERT INTO oack7426_users(nickname, username,password ) VALUES (?,?,?)";
   $stmt = $conn -> prepare($sql);
   $stmt -> bind_param('sss',$nickname,$username,$password);
   $result = $stmt ->execute();

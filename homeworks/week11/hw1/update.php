@@ -18,7 +18,8 @@
   <main >
     <h2>留言板｜編輯</h2>
     <?php 
-      $sql = "SELECT * FROM comments WHERE id = ?";
+      $id = $_GET['id'];
+      $sql = "SELECT * FROM oack7426_comments WHERE id = ?";
       $stmt = $conn -> prepare($sql);
       $stmt -> bind_param('s',$id);
       $result = $stmt -> execute();

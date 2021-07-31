@@ -10,7 +10,7 @@
     $username = $_SESSION['username'];
   }
   // 撈取使用者身份
-  $identity_sql = "SELECT * FROM users WHERE username = ?";
+  $identity_sql = "SELECT * FROM oack7426_users WHERE username = ?";
   $identity_stmt = $conn -> prepare($identity_sql);
   $identity_stmt -> bind_param('s',$username);
   $identity_result = $identity_stmt ->execute();

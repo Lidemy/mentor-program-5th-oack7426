@@ -33,7 +33,7 @@
       </div>
       <div class="board-content">
         <?php
-          $sql = "SELECT * FROM comments ORDER BY created_at DESC"; // 按照時間排序 （最新最上面）
+          $sql = "SELECT * FROM oack7426_comments ORDER BY created_at DESC"; // 按照時間排序 （最新最上面）
           $stmt = $conn -> prepare($sql);
           $result = $stmt ->execute();
           $result = $stmt -> get_result(); 
