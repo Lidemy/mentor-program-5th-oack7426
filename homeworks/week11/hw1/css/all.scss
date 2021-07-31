@@ -1,0 +1,163 @@
+// 色票
+// https://materialui.co/flatuicolors
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: #2C3E50;
+  overflow-wrap: break-word;
+}
+a{
+  color: #2980B9;
+  text-decoration: none;
+  &:hover{
+    opacity: .7;
+  }
+}
+body{
+  background: #ECF0F1;
+}
+h1~h6{
+  font-weight: bold;
+}
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #ECF0F1;
+  border-bottom: 1px solid #7F8C8D;
+  > div{
+    max-width: 600px;
+    padding: 10px 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+main{
+  max-width: 600px;
+  padding: 20px 40px;
+  margin: 0 auto;
+  margin-top: 40px;
+  h2{
+    font-size: 38px;
+    text-align: center; 
+    padding-bottom: 10px; 
+  }
+  h4{
+    padding-bottom: 5px;
+  }
+  .board-input{
+    padding-bottom: 20px;
+    border-bottom:1px solid #2C3E50;
+    text-align: center;
+  }
+  label{
+    text-align: left;
+    display: block;
+    padding-bottom: 10px;
+  }
+  input,textarea{
+    width: 100%;
+    padding:10px 20px;
+    display: block;
+    border: 1px solid hsl(210, 29%, 24%);
+    border-radius: 4px;
+  }
+  textarea{
+    height: 150px;
+  }
+  input[type="submit"]{
+    display: inline-block;
+    cursor: pointer;
+    padding:10px 20px;
+    color: #fff;
+    background: #2C3E50;
+    border-radius: 4px;
+    &:hover{
+      opacity: .7;
+    }
+  }
+  .board-content{
+    .card{
+      border-radius: 4px;
+      background: #fff;
+      margin: 10px 0;
+      .card-box{
+        padding: 20px;
+      }
+      .card-inbox{
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+      }
+      img{
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50vh;
+        margin-right: 20px;
+      }
+      .conent{
+        .name{
+          font-weight: bold;
+          padding-bottom: 2px;
+        }
+        .time{
+          font-size: 12px;
+          color: #7F8C8D;
+          padding-bottom: 4px;
+        }
+        .id{
+          font-size: 14px;
+          padding-bottom: 2px;
+          a{
+            font-size: 14px;
+          }
+        }
+      }
+      .txt{
+        font-size: 18px;
+        white-space: pre-line;
+      }
+      .btn-wrap{
+        display: flex;
+        border-top: 1px solid #BDC3C7;
+        .btn{
+          display: inline-block;
+          width: 50%;
+          text-align: center;
+          padding: 4px 0;
+          font-size: 14px;
+          // background: #33475c;
+          // color: #fff;
+          // &.edit{
+          //   background: #2C3E50;
+          // }
+        }
+      }
+    }
+  }
+}
+.user-from{
+  max-width: 400px;
+  padding-top: 40px;
+  margin: 0 auto;
+  input[type="submit"]{
+    margin-top: 80px;
+  }
+}
+.bottom-btn{
+  text-align: center;
+  padding-top: 10px;
+}
