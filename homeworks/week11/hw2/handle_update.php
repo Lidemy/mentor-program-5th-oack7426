@@ -4,7 +4,8 @@
   $title = $_POST['title'];
   $content = $_POST['content'];
 
-  if(empty($title) || empty($content)){ 
+  if(empty($title) || empty($content)){
+    header('Location: ./update.php?error=ture'); 
     die('有欄位為空值，請重新提交');
   }
   $sql = "UPDATE oack7426_articles SET title= ? ,content = ? where id = ?";

@@ -36,5 +36,13 @@
       <input type="submit" value="送出">
     </form>
   </main>
+  <script>
+    <?php
+      if(!empty($_GET['error'])){
+        $msg = '有欄位為空值，請重新提交';
+        echo 'alert("' . $msg . '")';
+      }
+      ?>
+  </script>
 </body>
 </html>

@@ -6,6 +6,7 @@
 
   //判斷是否空值
   if(empty($title) || empty($content)){ 
+    header('Location: ./add.php?error=ture');
     die('有欄位為空值，請重新提交');
   }
   $sql = "INSERT INTO oack7426_articles(title, content) VALUES ('$title','$content')";

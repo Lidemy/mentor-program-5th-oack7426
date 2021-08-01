@@ -22,5 +22,8 @@
   if(password_verify($password,$row['password'])){ //判斷輸入的密碼跟hash過後的資料庫密碼是否一致
     $_SESSION['username'] = $username;
     header('Location: ./index.php');
+  }else{
+    header('Location: ./login.php?errornum_rows=ture');
+    echo "錯誤原因：". $conn -> error;
   }
 ?>

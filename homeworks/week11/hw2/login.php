@@ -24,4 +24,16 @@
     </form>
   </main >
 </body>
+<script>
+  <?php
+   if(!empty($_GET['error'])){
+      $msg = '有欄位為空值，請重新提交';
+      echo 'alert("' . $msg . '")';
+    }
+    if(!empty($_GET['errornum_rows'])){
+      $msg = '帳號或密碼有誤';
+      echo 'alert("' . $msg . '")';
+    }
+  ?>
+  </script>
 </html>
