@@ -14,7 +14,7 @@
       <div class="btn-wrap">
       <?php
         if($username){
-          echo $username.' 你好，';
+          echo escape($username).' 你好，';
           echo '<a href="./logout.php" class="btn">登出</a>';
         }else{
           echo '<a href="./login.php" class="btn">登入</a> | <a href="./register.php" class="btn">註冊</a>';

@@ -20,7 +20,9 @@
     <div class="board-wrap">
       <div class="board-content">
         <?php
-          $sql = "SELECT oack7426_comments.nickname,oack7426_comments.content,oack7426_comments.created_at, oack7426_users.role FROM oack7426_comments INNER JOIN oack7426_users ON oack7426_comments.username = oack7426_users.username ORDER BY created_at DESC";
+          $sql = "SELECT oack7426_comments.nickname,oack7426_comments.content,oack7426_comments.created_at,oack7426_comments.id,
+          oack7426_users.role FROM oack7426_comments  INNER JOIN oack7426_users ON oack7426_comments.username = oack7426_users.username 
+          ORDER BY created_at DESC";
           $stmt = $conn -> prepare($sql);
           $result = $stmt ->execute();
           $result = $stmt -> get_result(); 
@@ -32,7 +34,7 @@
                   <div class="conent">
                     <p class="name"><?php echo escape($row['nickname']);?></p>
                     <p class="id">身份類別：<?php echo escape($row['role']);?> ｜
-                     <a href="./update_role.php?username=<?php echo $row['username'] ?>">修改</a>
+                     <a href="./update_role.php?username=<?php echo escape($row['username']) ?>">修改</a>
                    </p>
                     <p class="time"><?php echo escape($row['created_at']);?></p>
                   </div>
