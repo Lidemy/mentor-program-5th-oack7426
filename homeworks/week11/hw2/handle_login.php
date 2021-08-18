@@ -14,7 +14,7 @@
   $stmt = $conn -> prepare($sql);
   $stmt -> bind_param('s',$username);
   $result = $stmt ->execute();
-  $result = $conn ->query($sql); //呼叫確定是否執行成功
+  // $result = $conn ->query($sql); //呼叫確定是否執行成功
   $result = $stmt -> get_result(); //取資料
 
   
